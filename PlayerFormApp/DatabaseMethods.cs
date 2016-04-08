@@ -11,11 +11,8 @@ namespace PlayerFormApp
     public class DatabaseMethods
     {
 
-
-        //copied from original form project
-
         //insert player
-        internal Boolean insertPlayer(SqlConnection connection, Player p)
+        public Boolean insertPlayer(SqlConnection connection, Player p)
         //pass in connection, reader, player
         {
             try//encompass within a try/catch/finally block

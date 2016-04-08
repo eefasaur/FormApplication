@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlayerFormApp
 {
-    class Player
+    public class Player
     {
         private string name;
         private int height;
