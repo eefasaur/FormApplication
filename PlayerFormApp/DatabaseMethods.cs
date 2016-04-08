@@ -276,6 +276,108 @@ namespace PlayerFormApp
            return 0;
         }
 
+        public int minDistance(SqlConnection connection)
+        {
+            connection.Open();
+            try
+            {
+                string query = @"SELECT MIN(RunningDistance) FROM PlayerData";
+                SqlCommand command = new SqlCommand(query, connection);
+                return Convert.ToInt32(command.ExecuteScalar());
+            }
+            catch { }
+           finally//encompasses the code to fully close the connection
+            {
+                if (connection != null)//if there is a connection that is open - close it
+                {
+                    connection.Close();
+                }
+            }
+            return 0;
+        }
+
+        public double meanDistance(SqlConnection connection)
+        {
+            connection.Open();
+            try
+            {
+                string query = @"SELECT AVG(RunningDistance) FROM PlayerData";
+                SqlCommand command = new SqlCommand(query, connection);
+                return Convert.ToDouble(command.ExecuteScalar());
+            }
+            catch { }
+           finally//encompasses the code to fully close the connection
+            {
+                if (connection != null)//if there is a connection that is open - close it
+                {
+                    connection.Close();
+                }
+            }
+            return 0;
+        }
+
+
+
+        //MAXIMUM SPEED
+        public double maxSpeed(SqlConnection connection)
+        {
+            connection.Open();
+            try
+            {
+                string query = @"SELECT MAX(MaximumSpeed) FROM PlayerData";
+                SqlCommand command = new SqlCommand(query, connection);
+                return Convert.ToDouble(command.ExecuteScalar());
+            }
+            catch { }
+           finally//encompasses the code to fully close the connection
+            {
+                if (connection != null)//if there is a connection that is open - close it
+                {
+                    connection.Close();
+                }
+            }
+            return 0;
+        }
+
+        public double minSpeed(SqlConnection connection)
+        {
+            connection.Open();
+            try
+            {
+                string query = @"SELECT MIN(MaximumSpeed) FROM PlayerData";
+                SqlCommand command = new SqlCommand(query, connection);
+                return Convert.ToDouble(command.ExecuteScalar());
+            }
+            catch { }
+           finally//encompasses the code to fully close the connection
+            {
+                if (connection != null)//if there is a connection that is open - close it
+                {
+                    connection.Close();
+                }
+            }
+            return 0;
+        }
+
+        public double meanSpeed(SqlConnection connection)
+        {
+            connection.Open();
+            try
+            {
+                string query = @"SELECT AVG(MaximumSpeed) FROM PlayerData";
+                SqlCommand command = new SqlCommand(query, connection);
+                return Convert.ToDouble(command.ExecuteScalar());
+            }
+            catch { }
+           finally//encompasses the code to fully close the connection
+            {
+                if (connection != null)//if there is a connection that is open - close it
+                {
+                    connection.Close();
+                }
+            }
+            return 0;
+        }
 
 
 

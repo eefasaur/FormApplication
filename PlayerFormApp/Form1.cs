@@ -290,11 +290,16 @@ namespace PlayerFormApp
 
         private void statsSpeed_Click(object sender, EventArgs e)
         {
-
+            maxTextBox.Text = db.maxSpeed(connection).ToString();
+            minTextBox.Text = db.minSpeed(connection).ToString();
+            meanTextBox.Text = db.meanSpeed(connection).ToString();
         }
 
         private void statsDistance_Click(object sender, EventArgs e)
         {
+            maxTextBox.Text = db.maxDistance(connection).ToString();
+            minTextBox.Text = db.minDistance(connection).ToString();
+            meanTextBox.Text = db.meanDistance(connection).ToString();
 
         }
 
