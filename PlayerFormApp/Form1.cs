@@ -184,8 +184,10 @@ namespace PlayerFormApp
             }
         }
 
+        //updates running distance
         private void updateDistanceButton_Click(object sender, EventArgs e)
         {
+            //passes id and value(from text box) into method
             int id = Convert.ToInt32(idTextBox.Text);
             int d = Convert.ToInt32(distanceTextBox.Text);
 
@@ -200,8 +202,10 @@ namespace PlayerFormApp
             }
         }
 
+        //updates the maximum speed
         private void updateSpeedButton_Click(object sender, EventArgs e)
         {
+            //passes id and new value taken from text box on form
             int id = Convert.ToInt32(idTextBox.Text);
             double h = Convert.ToDouble(speedTextBox.Text);
 
@@ -215,6 +219,7 @@ namespace PlayerFormApp
                 MessageBox.Show("Error: " + ex);
             }
         }
+
 
         //this adds/removes visibility of the UI to an update view
         private void _updateButton_Click(object sender, EventArgs e)
@@ -235,18 +240,54 @@ namespace PlayerFormApp
         }
 
 
-        //the following are auto generated accidental stubs
-
-        //might not need this one
+        //done update - reverts back to normal form display
         private void doneButton_Click(object sender, EventArgs e)
         {
+            //reverses the visibility true/false of clicking update button
+            updateAgeButton.Visible = false;
+            ageTextBox.ReadOnly = true;
 
+            updateDistanceButton.Visible = false;
+            distanceTextBox.ReadOnly = true;
+
+            updateSpeedButton.Visible = false;
+            speedTextBox.ReadOnly = true;
+
+            doneButton.Visible = false;
+            _deleteButton.Visible = true;
+            _updateButton.Visible = true;
+            _newButton.Visible = true;
         }
-        //accident
-        private void _newButton_Click(object sender, EventArgs e)
+
+
+
+
+
+        //nope
+        private void _viewPlayersTable_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            //https://www.youtube.com/watch?v=pb9NZruK2hk
+
+            idTextBox.Text = _viewPlayersTable.SelectedRows[0].Cells[0].Value.ToString();
+            nameTextBox.Text = _viewPlayersTable.SelectedRows[0].Cells[1].Value.ToString();
+            ageTextBox.Text = _viewPlayersTable.SelectedRows[0].Cells[2].Value.ToString();
+            heightTextBox.Text = _viewPlayersTable.SelectedRows[0].Cells[3].Value.ToString();
+            distanceTextBox.Text = _viewPlayersTable.SelectedRows[0].Cells[4].Value.ToString();
+            speedTextBox.Text = _viewPlayersTable.SelectedRows[0].Cells[5].Value.ToString();
+
+            //the update and delete button become visible for the user to select
+            _updateButton.Visible = true;
+            _deleteButton.Visible = true;
+        }
+
+        
+        
+        //nope not needed
+        private void _viewPlayersTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
 
         
 

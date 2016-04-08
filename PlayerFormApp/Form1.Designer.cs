@@ -73,8 +73,11 @@
             this._viewPlayersTable.Name = "_viewPlayersTable";
             this._viewPlayersTable.ReadOnly = true;
             this._viewPlayersTable.RowTemplate.Height = 24;
+            this._viewPlayersTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._viewPlayersTable.Size = new System.Drawing.Size(449, 197);
             this._viewPlayersTable.TabIndex = 0;
+            this._viewPlayersTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._viewPlayersTable_CellContentClick);
+            this._viewPlayersTable.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this._viewPlayersTable_MouseDoubleClick);
             // 
             // _logoImg
             // 
