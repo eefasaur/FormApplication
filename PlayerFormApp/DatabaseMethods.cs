@@ -13,7 +13,7 @@ namespace PlayerFormApp
 
         //insert player
         public Boolean insertPlayer(SqlConnection connection, Player p)
-        //pass in connection, reader, player
+        //pass in connection, player
         {
             try//encompass within a try/catch/finally block
             {
@@ -21,8 +21,8 @@ namespace PlayerFormApp
 
                 //get parameters
                 string name = p.Name;
-                int height = p.Height;
                 int age = p.Age;
+                int height = p.Height;
                 int distance = p.Distance;
                 double speed = p.Speed;
 
@@ -63,7 +63,7 @@ namespace PlayerFormApp
 
 
         //delete player
-        internal void deletePlayer(SqlConnection connection, int id)
+        public void deletePlayer(SqlConnection connection, int id)
         //pass in connection, reader, id (from user input)
         {
             try

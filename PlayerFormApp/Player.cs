@@ -16,14 +16,8 @@ namespace PlayerFormApp
 
 
 
-        public Player()
-        {
-            this.name = "Unassigned";
-            this.height = 0;
-            this.age = 0;
-            this.distance = 0;
-            this.speed = 0;
-        }
+        public Player() { }
+      
 
         public Player(string name, int height, int age, int distance, double speed)
         {
