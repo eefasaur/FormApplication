@@ -59,6 +59,7 @@
             this.meanTextBox = new System.Windows.Forms.TextBox();
             this.minTextBox = new System.Windows.Forms.TextBox();
             this.doneButton = new System.Windows.Forms.Button();
+            this._addToDatabase = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._viewPlayersTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._logoImg)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +94,7 @@
             this._loadButton.TabIndex = 2;
             this._loadButton.Text = "Load Players";
             this._loadButton.UseVisualStyleBackColor = true;
+            this._loadButton.Click += new System.EventHandler(this._loadButton_Click);
             // 
             // _updateButton
             // 
@@ -103,6 +105,7 @@
             this._updateButton.Text = "Update Player";
             this._updateButton.UseVisualStyleBackColor = true;
             this._updateButton.Visible = false;
+            this._updateButton.Click += new System.EventHandler(this._updateButton_Click);
             // 
             // _deleteButton
             // 
@@ -121,8 +124,9 @@
             this._newButton.Name = "_newButton";
             this._newButton.Size = new System.Drawing.Size(76, 43);
             this._newButton.TabIndex = 5;
-            this._newButton.Text = "Add New Player";
+            this._newButton.Text = "New Player";
             this._newButton.UseVisualStyleBackColor = true;
+            this._newButton.Click += new System.EventHandler(this._newButton_Click);
             // 
             // _idLabel
             // 
@@ -240,6 +244,7 @@
             this.updateAgeButton.Text = "Update";
             this.updateAgeButton.UseVisualStyleBackColor = true;
             this.updateAgeButton.Visible = false;
+            this.updateAgeButton.Click += new System.EventHandler(this.updateAgeButton_Click);
             // 
             // updateSpeedButton
             // 
@@ -250,6 +255,7 @@
             this.updateSpeedButton.Text = "Update";
             this.updateSpeedButton.UseVisualStyleBackColor = true;
             this.updateSpeedButton.Visible = false;
+            this.updateSpeedButton.Click += new System.EventHandler(this.updateSpeedButton_Click);
             // 
             // updateDistanceButton
             // 
@@ -260,6 +266,7 @@
             this.updateDistanceButton.Text = "Update";
             this.updateDistanceButton.UseVisualStyleBackColor = true;
             this.updateDistanceButton.Visible = false;
+            this.updateDistanceButton.Click += new System.EventHandler(this.updateDistanceButton_Click);
             // 
             // statsDistance
             // 
@@ -344,7 +351,7 @@
             // 
             // doneButton
             // 
-            this.doneButton.Location = new System.Drawing.Point(370, 88);
+            this.doneButton.Location = new System.Drawing.Point(370, 26);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(76, 43);
             this.doneButton.TabIndex = 30;
@@ -352,6 +359,17 @@
             this.doneButton.UseVisualStyleBackColor = true;
             this.doneButton.Visible = false;
             this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
+            // 
+            // _addToDatabase
+            // 
+            this._addToDatabase.Location = new System.Drawing.Point(370, 26);
+            this._addToDatabase.Name = "_addToDatabase";
+            this._addToDatabase.Size = new System.Drawing.Size(76, 43);
+            this._addToDatabase.TabIndex = 31;
+            this._addToDatabase.Text = "Add Player";
+            this._addToDatabase.UseVisualStyleBackColor = true;
+            this._addToDatabase.Visible = false;
+            this._addToDatabase.Click += new System.EventHandler(this._addToDatabase_Click);
             // 
             // playerForm
             // 
@@ -390,6 +408,7 @@
             this.Controls.Add(this._loadButton);
             this.Controls.Add(this._logoImg);
             this.Controls.Add(this._viewPlayersTable);
+            this.Controls.Add(this._addToDatabase);
             this.Name = "playerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Player Form";
@@ -434,6 +453,7 @@
         private System.Windows.Forms.TextBox meanTextBox;
         private System.Windows.Forms.TextBox minTextBox;
         private System.Windows.Forms.Button doneButton;
+        private System.Windows.Forms.Button _addToDatabase;
     }
 }
 

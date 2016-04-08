@@ -66,7 +66,7 @@ namespace PlayerFormApp
 
 
         //delete player
-        internal void deletePlayer(SqlConnection connection, SqlDataReader reader, int id)
+        internal void deletePlayer(SqlConnection connection, int id)
         //pass in connection, reader, id (from user input)
         {
             try
@@ -86,10 +86,7 @@ namespace PlayerFormApp
             
             finally//encompasses the code to fully close the connection
             {
-                if (reader != null)//if there is a reader that is open - close it
-                {
-                    reader.Close();
-                }
+               
                 if (connection != null)//if there is a connection that is open - close it
                 {
                     connection.Close();
@@ -147,7 +144,8 @@ namespace PlayerFormApp
 
 
         //update age
-        internal void updateAge(SqlConnection connection, SqlDataReader reader, int player, int a)
+        //changes since previous version - reader has been removed as it was not needed
+        internal void updateAge(SqlConnection connection, int player, int a)
         //pass in connection, reader, player id, age
         {
             try
@@ -174,10 +172,6 @@ namespace PlayerFormApp
             catch { }
             finally//encompasses the code to fully close the connection
             {
-                if (reader != null)//if there is a reader that is open - close it
-                {
-                    reader.Close();
-                }
                 if (connection != null)//if there is a connection that is open - close it
                 {
                     connection.Close();
@@ -187,7 +181,8 @@ namespace PlayerFormApp
 
 
         //update distance
-        internal void updateDistance(SqlConnection connection, SqlDataReader reader, int player, int d)
+        //changes since previous version - reader has been removed as it was not needed
+        internal void updateDistance(SqlConnection connection, int player, int d)
         //pass in connection, reader, player id, age
         {
             try
@@ -214,10 +209,7 @@ namespace PlayerFormApp
             catch { }
             finally//encompasses the code to fully close the connection
             {
-                if (reader != null)//if there is a reader that is open - close it
-                {
-                    reader.Close();
-                }
+
                 if (connection != null)//if there is a connection that is open - close it
                 {
                     connection.Close();
@@ -227,7 +219,8 @@ namespace PlayerFormApp
 
 
         //update speed
-        internal void updateSpeed(SqlConnection connection, SqlDataReader reader, int player, double s)
+        //changes since previous version - reader has been removed as it was not needed
+        internal void updateSpeed(SqlConnection connection, int player, double s)
         //pass in connection, reader, player id, age
         {
             try
@@ -254,10 +247,6 @@ namespace PlayerFormApp
             catch { }
             finally//encompasses the code to fully close the connection
             {
-                if (reader != null)//if there is a reader that is open - close it
-                {
-                    reader.Close();
-                }
                 if (connection != null)//if there is a connection that is open - close it
                 {
                     connection.Close();
