@@ -279,6 +279,7 @@
             this.statsDistance.TabIndex = 21;
             this.statsDistance.Text = "Distance";
             this.statsDistance.UseVisualStyleBackColor = true;
+            this.statsDistance.Click += new System.EventHandler(this.statsDistance_Click);
             // 
             // statsSpeed
             // 
@@ -288,6 +289,7 @@
             this.statsSpeed.TabIndex = 22;
             this.statsSpeed.Text = "Max Speed";
             this.statsSpeed.UseVisualStyleBackColor = true;
+            this.statsSpeed.Click += new System.EventHandler(this.statsSpeed_Click);
             // 
             // _statsLabel
             // 

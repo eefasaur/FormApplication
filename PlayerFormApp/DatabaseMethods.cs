@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PlayerFormApp
 {
-    class DatabaseMethods
+    public class DatabaseMethods
     {
 
 
@@ -253,6 +253,31 @@ namespace PlayerFormApp
                 }
             }
         }
+
+
+        //RUNNING DISTANCE
+        public int maxDistance(SqlConnection connection)
+        {
+           connection.Open();
+           try
+           {
+               string query = @"SELECT MAX(RunningDistance) FROM PlayerData";
+               SqlCommand command = new SqlCommand(query, connection);
+               return Convert.ToInt32(command.ExecuteScalar());
+           }
+           catch { }
+           finally//encompasses the code to fully close the connection
+           {
+               if (connection != null)//if there is a connection that is open - close it
+               {
+                   connection.Close();
+               }
+           }
+           return 0;
+        }
+
+
+
 
     }
 }

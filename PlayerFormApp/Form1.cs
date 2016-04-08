@@ -288,6 +288,16 @@ namespace PlayerFormApp
 
         }
 
+        private void statsSpeed_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statsDistance_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         
 
