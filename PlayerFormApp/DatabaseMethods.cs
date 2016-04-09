@@ -105,7 +105,9 @@ namespace PlayerFormApp
 
                 //Name, Age, Height, RunningDistance, MaxiumumSpeed
                 //new command
-                //SqlCommand command = new SqlCommand("SELECT * FROM Player", connection);
+                //DataAdapter is used as a bridge between the DataSet and the source (db)
+                //Adapter has .Fill() method which populates the Set with the information
+                //in the db.  This is a way to decouple the code
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM PlayerData", connection);
                 SqlCommandBuilder command = new SqlCommandBuilder(adapter);
 
@@ -300,7 +302,8 @@ namespace PlayerFormApp
             {
                 string query = @"SELECT AVG(RunningDistance) FROM PlayerData";
                 SqlCommand command = new SqlCommand(query, connection);
-                return Convert.ToDouble(command.ExecuteScalar());
+                double meanDist = Convert.ToDouble(command.ExecuteScalar());
+                return Math.Round(meanDist, 1);
             }
             catch { }
            finally//encompasses the code to fully close the connection
@@ -323,7 +326,8 @@ namespace PlayerFormApp
             {
                 string query = @"SELECT MAX(MaximumSpeed) FROM PlayerData";
                 SqlCommand command = new SqlCommand(query, connection);
-                return Convert.ToDouble(command.ExecuteScalar());
+                double maxSp = Convert.ToDouble(command.ExecuteScalar());
+                return Math.Round(maxSp, 1);
             }
             catch { }
            finally//encompasses the code to fully close the connection
@@ -363,7 +367,8 @@ namespace PlayerFormApp
             {
                 string query = @"SELECT AVG(MaximumSpeed) FROM PlayerData";
                 SqlCommand command = new SqlCommand(query, connection);
-                return Convert.ToDouble(command.ExecuteScalar());
+                double meanSp = Convert.ToDouble(command.ExecuteScalar());
+                return Math.Round(meanSp, 1);
             }
             catch { }
            finally//encompasses the code to fully close the connection
@@ -374,6 +379,22 @@ namespace PlayerFormApp
                 }
             }
             return 0;
+        }
+
+
+
+        //GET COUNT
+        public int count(SqlConnection connection)
+        {
+            connection.Open();
+
+            //get row count of db
+            //initial number of rows
+            SqlCommand command = new SqlCommand("SELECT COUNT(PlayerID) FROM PlayerData", connection);
+            return Convert.ToInt32(command.ExecuteScalar());
+
+            //connection.Close();
+
         }
 
 
